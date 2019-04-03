@@ -2,6 +2,19 @@
   background-color: blue;
   } */
 
+#telnum {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 14em;
+}
+
+.field {
+  margin-bottom: 10px;
+  margin-left: 5px;
+  width: 14em;
+  padding: 5px;
+}
+
 .keyrow {
   padding: 5px;
 }
@@ -23,3 +36,4 @@
 .mdi-numeric-1-circle-outline {
   padding-bottom: 38px;
 }
+
