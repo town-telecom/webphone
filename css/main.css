@@ -2,6 +2,10 @@
   background-color: blue;
   } */
 
+.keyrow {
+  padding: 5px;
+}
+
 .button {
   height: 3em;
   width: 3em;
