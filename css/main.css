@@ -11,3 +11,11 @@
   padding-top: 15px;
   padding-left: 15px;
 }
+
+.mdi-asterisk, .mdi-pound {
+  padding: 0;
+}
+
+.mdi-numeric-1-circle-outline {
+  padding-bottom: 38px;
+}
