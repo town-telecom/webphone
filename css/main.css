@@ -1,6 +1,16 @@
 /* html {
   background-color: blue;
   } */
+  
+#outerkeypad {
+  margin-left: 15px;
+}
+
+#webphone {
+    width: 20em;
+    border: 2px solid black;
+    padding: 25px;
+}
 
 #telnum {
   margin-bottom: 10px;
@@ -39,4 +49,5 @@
 
 #callbutton {
   margin-top: 10px;
+  margin-left: 6px;
 }
