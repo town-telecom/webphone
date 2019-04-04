@@ -1,22 +1,26 @@
 /* html {
   background-color: blue;
   } */
-  
+
 #outerkeypad {
   margin-left: 15px;
 }
 
 #webphone {
-    width: 20em;
-    border: 2px solid black;
-    padding: 25px;
+  width: 20em;
+  border: 2px solid black;
+  padding: 25px;
 }
 
-#telnum {
+#messagefield {
+  width: 81%;
+}
+
+/* #telnum {
   margin-bottom: 10px;
   margin-left: 5px;
   width: 14em;
-}
+} */
 
 .field {
   margin-bottom: 10px;
@@ -37,6 +41,11 @@
 .mdi {
   padding-top: 15px;
   padding-left: 15px;
+}
+
+.mdi-arrow-up-bold-circle-outline {
+  padding-left: 1px;
+  padding-top: 0;
 }
 
 .mdi-asterisk, .mdi-pound, .mdi-phone-classic {
