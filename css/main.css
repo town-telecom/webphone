@@ -29,7 +29,7 @@
   padding-left: 15px;
 }
 
-.mdi-asterisk, .mdi-pound {
+.mdi-asterisk, .mdi-pound, .mdi-phone-classic {
   padding: 0;
 }
 
@@ -37,3 +37,6 @@
   padding-bottom: 38px;
 }
 
+#callbutton {
+  margin-top: 10px;
+}
