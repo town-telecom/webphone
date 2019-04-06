@@ -60,3 +60,13 @@
   margin-top: 10px;
   margin-left: 6px;
 }
+
+#backspace {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+#backspace:focus {
+  border: none;
+}

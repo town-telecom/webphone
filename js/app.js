@@ -2,16 +2,22 @@ const audio_url = './sounds/';
 const extension = '.wav';
 
 
-function keypadPress(sound) {
+function keypadPress(key) {
   let telNumber = document.querySelector("#telNumber").value;
-  let audio = new Audio(audio_url + sound + extension);
-  audio.play();
-  if (sound == "star") {
-    sound = "*"
-  } else if (sound == "pound") {
-    sound = "#"
-  } else {
-    sound 
+  if (key != "back") {
+    let audio = new Audio(audio_url + key + extension);
+    audio.play();
   }
-  document.querySelector("#telNumber").value=telNumber + sound;
+  switch (key) {
+    case "star":
+      key = "*";
+      break;
+    case "pound":
+      key = "#";
+      break;
+    case "back":
+      key = "";
+      telNumber = telNumber.substring(0, telNumber.length - 1);
+  }
+  document.querySelector("#telNumber").value=telNumber + key;
 }
