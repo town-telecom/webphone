@@ -48,7 +48,7 @@
   padding-top: 0;
 }
 
-.mdi-asterisk, .mdi-pound, .mdi-phone-classic {
+.mdi-asterisk, .mdi-pound, .mdi-phone-classic, .mdi-phone-hangup {
   padding: 0;
 }
 
@@ -56,10 +56,14 @@
   padding-bottom: 38px;
 }
 
-#callbutton {
+#callbutton, #hangupbutton {
   margin-top: 10px;
   margin-left: 6px;
 }
+
+/* #hangupbutton {
+  visibility: collapse;
+} */
 
 #backspace {
   border: none;
