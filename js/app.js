@@ -5,10 +5,8 @@ const extension = '.wav';
 function keypadPress(key) {
 
   let telNumber = document.querySelector("#telNumber").value;
-  if (key != "back") {
-    let audio = new Audio(audio_url + key + extension);
-    audio.play();
-  }
+  let audio = new Audio(audio_url + key + extension);
+  audio.play();
   if (key == "star") {
     key = "*";
   } else if (key == "pound") {
