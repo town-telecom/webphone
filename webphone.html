@@ -14,7 +14,7 @@
       <div id="outerkeypad">
         <div class="field">
             <p class="control has-icons-left has-icons-right">
-              <input id="telNumber" class="input" type="text" placeholder="Enter num or ext..." value="">
+              <input id="telNumber" class="input" type="text" placeholder="Enter num or ext..." value="" onkeypress="keypadType(event)">
               <span class="icon is-small is-left">
                 <i class="fas fa-mobile-alt"></i>
               </span>
@@ -169,7 +169,7 @@
           </div>
           <div class="keyrow">
             <a class="button is-large is-disabled is-invisible"></a>
-            <a id="callbutton" class="button is-medium is-success is-rounded is-invisible" title="CALL">
+            <a id="callbutton" class="button is-medium is-success is-rounded is-invisible" title="CALL" onclick="createSimple()">
               <span class="icon is-large">
                 <i class="mdi mdi-36px mdi-phone-classic"></i>
               </span>
@@ -179,12 +179,14 @@
                 <i class="mdi mdi-36px mdi-phone-hangup"></i>
               </span>
             </a>
-            <a id="backspace" class="button is-large is-invisible" onclick="keypadPress('back')" title="DELETE">
+            <a id="backspace" class="button is-large is-invisible" title="DELETE" onclick="keypadPress('back')">
               <i class="mdi mdi-backspace-outline"></i>  
             </a>
         </div>
       </div>
     </div>
+    <video id="remoteVideo"></video>
+    <video id="localVideo" muted="muted"></video>
     <script type="text/javascript" src="./js/sip-0.13.7.min.js"></script>
     <script type="text/javascript" src="./js/config.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
