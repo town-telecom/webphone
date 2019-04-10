@@ -37,6 +37,18 @@ function keypadType(event) {
   //   }
   // });
   switch (event.key) {
+    case "0":
+    case "1":
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6":
+    case "7":
+    case "8":
+    case "9":
+      key = event.key;
+      break;
     case "#":
       key = "pound";
       break;
@@ -44,8 +56,8 @@ function keypadType(event) {
       key = "star";
       break;
     default:
-      key = event.key;
-      break; 
+      key = "letter";
+      break;
   }
   //let key = event.key;
   let audio = new Audio(audio_url + key + extension);
@@ -85,7 +97,7 @@ function keypadPress(key) {
       document.querySelector("#telNumber").value = telNumber;
       if (telNumber.length == 0) {
         document.querySelector("#callbutton").className = "button is-medium is-success is-rounded is-invisible";
-        document.querySelector("#backspace").className = "button is-large is-invisible"; 
+        document.querySelector("#backspace").className = "button is-large is-invisible";
       }
       break;
   }
@@ -110,5 +122,5 @@ function createSimple() {
   simple.on('unmute', function() {});
   // simple.on('dtmf', function(tone) {});
   // simple.on('message', function (message) {});
-  
+
 }
