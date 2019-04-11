@@ -67,9 +67,14 @@ function keypadType(event) {
 
 
 function keypadPress(key) {
+
   let telNumber = document.querySelector("#telNumber").value;
-  let audio = new Audio(audio_url + key + extension);
-  audio.play();
+
+  // let audio = new Audio(audio_url + key + extension);
+  // audio.play();
+
+  audioPlay(key);
+
   if (key == "star") {
     key = "*";
   } else if (key == "pound") {
@@ -104,6 +109,12 @@ function keypadPress(key) {
 
 }
 
+function audioPlay(key) {
+
+  let audio = new Audio(audio_url + key + extension);
+  audio.play();
+
+}
 
 function createSimple() {
 
