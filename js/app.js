@@ -56,7 +56,6 @@ function keypadType(event) {
       key = "letter";
       break;
   }
-  console.log(key);
   if (key != "Enter") {
     audioPlay(key);
     if (key != "error") {
