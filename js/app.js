@@ -25,18 +25,9 @@ const sipOptions = {
 
 function keypadType(event) {
 
-  console.log("yey!", event.keyCode, event.key, event.charCode);
-  document.querySelector("#telNumber").addEventListener('keydown', function(event) {
-    if (event.code === "Backspace") {
-      console.log("delete!");
-    }
-  });
-  // document.addEventListener('keyup', function(event) {
-  //   if (event.keyCode === 46)  {
-  //     console.log("backspace!");
-  //   }
-  // });
-  switch (event.key) {
+  let key = event.key;
+  backspaceListener();
+  switch (key) {
     case "0":
     case "1":
     case "2":
@@ -47,7 +38,6 @@ function keypadType(event) {
     case "7":
     case "8":
     case "9":
-      key = event.key;
       break;
     case "#":
       key = "pound";
@@ -59,9 +49,8 @@ function keypadType(event) {
       key = "letter";
       break;
   }
-  //let key = event.key;
-  let audio = new Audio(audio_url + key + extension);
-  audio.play();
+  audioPlay(key);
+  showButtons();
 
 }
 
@@ -69,12 +58,7 @@ function keypadType(event) {
 function keypadPress(key) {
 
   let telNumber = document.querySelector("#telNumber").value;
-
-  // let audio = new Audio(audio_url + key + extension);
-  // audio.play();
-
   audioPlay(key);
-
   if (key == "star") {
     key = "*";
   } else if (key == "pound") {
@@ -94,25 +78,55 @@ function keypadPress(key) {
     case "*":
     case "#":
       document.querySelector("#telNumber").value = telNumber + key;
-      document.querySelector("#callbutton").className = "button is-medium is-success is-rounded";
-      document.querySelector("#backspace").className = "button is-large";
+      showButtons();
       break;
     case "back":
       telNumber = telNumber.substring(0, telNumber.length - 1);
       document.querySelector("#telNumber").value = telNumber;
       if (telNumber.length == 0) {
-        document.querySelector("#callbutton").className = "button is-medium is-success is-rounded is-invisible";
-        document.querySelector("#backspace").className = "button is-large is-invisible";
+        hideButtons();
       }
       break;
   }
 
 }
 
+
 function audioPlay(key) {
 
   let audio = new Audio(audio_url + key + extension);
   audio.play();
+
+}
+
+
+function showButtons() {
+
+  document.querySelector("#callbutton").className = "button is-medium is-success is-rounded";
+  document.querySelector("#backspace").className = "button is-large";
+
+}
+
+
+function hideButtons() {
+
+  document.querySelector("#callbutton").className = "button is-medium is-success is-rounded is-invisible";
+  document.querySelector("#backspace").className = "button is-large is-invisible";
+
+}
+
+
+function backspaceListener() {
+
+  document.querySelector("#telNumber").addEventListener('keydown', function(event) {
+    if (event.code === "Backspace") {
+      audioPlay('back');
+      //console.log("value", document.querySelector("#telNumber").value);
+      if (document.querySelector("#telNumber").value.length === 1) {
+        hideButtons();
+      }
+    }
+  });
 
 }
 
