@@ -45,12 +45,24 @@ function keypadType(event) {
     case "*":
       key = "star";
       break;
+    case "Enter":
+      if (document.querySelector("#telNumber").value !== "") {
+        generateCall();
+      } else {
+        key = "error";
+      }
+      break;
     default:
       key = "letter";
       break;
   }
-  audioPlay(key);
-  showButtons();
+  console.log(key);
+  if (key != "Enter") {
+    audioPlay(key);
+    if (key != "error") {
+      showButtons();
+    }
+  }
 
 }
 
@@ -117,6 +129,14 @@ function backspaceListener() {
   });
 
 }
+
+
+function generateCall() {
+
+  console.log("Generate call!");
+
+}
+
 
 function createSimple() {
 
