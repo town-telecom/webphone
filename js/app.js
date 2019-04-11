@@ -65,27 +65,16 @@ function keypadPress(key) {
     key = "#";
   }
   switch (key) {
-    case "0":
-    case "1":
-    case "2":
-    case "3":
-    case "4":
-    case "5":
-    case "6":
-    case "7":
-    case "8":
-    case "9":
-    case "*":
-    case "#":
-      document.querySelector("#telNumber").value = telNumber + key;
-      showButtons();
-      break;
     case "back":
       telNumber = telNumber.substring(0, telNumber.length - 1);
       document.querySelector("#telNumber").value = telNumber;
       if (telNumber.length == 0) {
         hideButtons();
       }
+      break;
+    default:
+      document.querySelector("#telNumber").value = telNumber + key;
+      showButtons();
       break;
   }
 
@@ -121,7 +110,6 @@ function backspaceListener() {
   document.querySelector("#telNumber").addEventListener('keydown', function(event) {
     if (event.code === "Backspace") {
       audioPlay('back');
-      //console.log("value", document.querySelector("#telNumber").value);
       if (document.querySelector("#telNumber").value.length === 1) {
         hideButtons();
       }
