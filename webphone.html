@@ -14,7 +14,7 @@
       <div id="outerkeypad">
         <div class="field">
             <p class="control has-icons-left has-icons-right">
-              <input id="telNumber" class="input" type="text" placeholder="Enter num or ext..." value="" onkeypress="keypadType(event)">
+              <input id="telNumber" class="input" type="text" placeholder="Enter num or rcpt..." title="Enter number to call or text recipient for message..." value="" onkeypress="keypadType(event)">
               <span class="icon is-small is-left">
                 <i class="fas fa-mobile-alt"></i>
               </span>
@@ -22,11 +22,11 @@
           </div>
           <div class="field">
             <p class="control has-icons-left">
-              <input id="messagefield" class="input" type="password" placeholder="Enter message...">
+              <input id="messagefield" class="input" type="text" placeholder="Enter message..." maxlength="140">
               <span class="icon is-medium is-left">
                 <i class="fas fa-sms"></i>
               </span>
-              <a class="button is-success is-small is-rounded">
+              <a class="button is-success is-small is-rounded" onclick="sendSipMessage()">
                 <i class="mdi mdi-24px mdi-arrow-up-bold-circle-outline"></i>
               </a>
             </p>

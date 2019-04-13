@@ -154,6 +154,21 @@ function generateCall() {
 }
 
 
+function sendSipMessage() {
+
+  let sipMessage = document.querySelector("#messagefield").value;
+  let textRecipient = document.querySelector("#telNumber").value;
+  document.querySelector("#messagefield").value = "";
+  document.querySelector("#telNumber").value = "";
+  if (sipMessage !== "" && textRecipient !== "") {
+    console.log(`text recipient: ${textRecipient}, message: ${sipMessage}`);
+  } else {
+    console.log("text or message empty!");
+    modalToggle();
+  }
+
+}
+
 function createSimple(num) {
 
   console.log("Create Simple!");
