@@ -124,7 +124,15 @@ function generateCall() {
         // console.log("non numeric value error!");
         modalToggle();
       } else {
-        console.log("Generate Call!!!");
+        console.log("Generate Call");
+        // if (Number.isInteger(Number(number2Call))) {
+        //   number2Call = Number(number2Call);
+        //   number2Call = toString(number2Call);
+        //   console.log("Generate Call!!!", number2Call);
+        // } else {
+        //   console.log("decimal symbol present!");
+        //   modalToggle();
+        // }
       }
     } else {
       let patternCheckOut = true;
