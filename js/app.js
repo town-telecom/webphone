@@ -1,28 +1,3 @@
-const audio_url = './sounds/';
-const extension = '.wav';
-const sipOptions = {
-
-  media: {
-    local: {
-      video: document.getElementById('localVideo')
-    },
-    remote: {
-      video: document.getElementById('remoteVideo'),
-      audio: document.getElementById('remoteVideo')
-    }
-  },
-  ua: {
-    traceSip: userAgent.traceSip,
-    uri: userAgent.uri,
-    wsServers: userAgent.wsServers,
-    authorizationUser: userAgent.authorizationUser,
-    password: userAgent.password,
-    displayName: userAgent.displayName
-  }
-
-};
-
-
 function keypadType(event) {
 
   let key = event.key;
@@ -139,9 +114,34 @@ function modalToggle() {
 
 function generateCall() {
 
-  console.log("Generate call!");
   let number2Call = document.querySelector("#telNumber").value;
-  createSimple(number2Call);
+  if (document.querySelector("#telNumber").value.length < allowedPattern.min || document.querySelector("#telNumber").value.length > allowedPattern.max) {
+    // console.log("length error!");
+    modalToggle();
+  } else {
+    if (allowedPattern.onlyNumbers === true) {
+      if (isNaN(Number(number2Call))) {
+        // console.log("non numeric value error!");
+        modalToggle();
+      } else {
+        console.log("Generate Call!!!");
+      }
+    } else {
+      let patternCheckOut = true;
+      for (let char of allowedPattern.invalidChar) {
+        if (number2Call.includes(char)) {
+          console.log("invalid character!");
+          patternCheckOut = false;
+        }
+      }
+      if (patternCheckOut === true) {
+        console.log("Generate Call!!!");
+      } else {
+        // console.log("invalid character error!");
+        modalToggle();
+      }
+    }
+  }
 
 }
 
