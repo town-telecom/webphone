@@ -8,3 +8,8 @@ const userAgent = {
   "displayName": "TownTelecom"
 
 }
+
+const allowedLength = {
+  min: 1,
+  max: 10
+}

@@ -130,6 +130,13 @@ function backspaceListener() {
 }
 
 
+function modalToggle() {
+
+  document.querySelector(".modal").classList.toggle("is-active");
+
+}
+
+
 function generateCall() {
 
   console.log("Generate call!");
