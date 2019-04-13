@@ -133,12 +133,15 @@ function backspaceListener() {
 function generateCall() {
 
   console.log("Generate call!");
+  let number2Call = document.querySelector("#telNumber").value;
+  createSimple(number2Call);
 
 }
 
 
-function createSimple() {
+function createSimple(num) {
 
+  console.log("Create Simple!");
   var simple = new SIP.Web.Simple(sipOptions);
 
   simple.on('registered', function() {});
