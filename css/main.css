@@ -74,3 +74,8 @@
 #backspace:focus {
   border: none;
 }
+
+#error-icon {
+  height: 64px;
+  width: 256px;
+}
