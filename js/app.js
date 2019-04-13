@@ -117,28 +117,33 @@ function generateCall() {
   let number2Call = document.querySelector("#telNumber").value;
   if (document.querySelector("#telNumber").value.length < allowedPattern.min || document.querySelector("#telNumber").value.length > allowedPattern.max) {
     // console.log("length error!");
+    document.querySelector("#errorMessage").innerText = "The length of your dialing string is outside the parameters set by your administrator. Please check your input string and try again...";
     modalToggle();
   } else {
     if (allowedPattern.onlyNumbers === true) {
       if (isNaN(Number(number2Call))) {
         // console.log("non numeric value error!");
+        document.querySelector("#errorMessage").innerText = "Only numbers on the dialing string are allowed. Please check and try again...";
         modalToggle();
       } else {
-        console.log("Generate Call");
-        // if (Number.isInteger(Number(number2Call))) {
-        //   number2Call = Number(number2Call);
-        //   number2Call = toString(number2Call);
-        //   console.log("Generate Call!!!", number2Call);
-        // } else {
-        //   console.log("decimal symbol present!");
-        //   modalToggle();
-        // }
+        // console.log("Generate Call");
+        if (Number.isInteger(Number(number2Call))) {
+          number2Call = Number(number2Call);
+          // console.log(number2Call);
+          number2Call = number2Call.toString();
+          // console.log(number2Call);
+          console.log("Generate Call!!!", number2Call);
+        } else {
+          // console.log("decimal symbol present!");
+          document.querySelector("#errorMessage").innerText = "Decimal symbol present on dialing string. Please check and try again...";
+          modalToggle();
+        }
       }
     } else {
       let patternCheckOut = true;
       for (let char of allowedPattern.invalidChar) {
         if (number2Call.includes(char)) {
-          console.log("invalid character!");
+          // console.log("invalid character!");
           patternCheckOut = false;
         }
       }
@@ -146,6 +151,7 @@ function generateCall() {
         console.log("Generate Call!!!");
       } else {
         // console.log("invalid character error!");
+        document.querySelector("#errorMessage").innerText = "Invalid character. Please check the number and try again...";
         modalToggle();
       }
     }
@@ -163,11 +169,13 @@ function sendSipMessage() {
   if (sipMessage !== "" && textRecipient !== "") {
     console.log(`text recipient: ${textRecipient}, message: ${sipMessage}`);
   } else {
-    console.log("text or message empty!");
+    //console.log("text or message empty!");
+    document.querySelector("#errorMessage").innerText = "Text or message input fields are empty. Please check and try again...";
     modalToggle();
   }
 
 }
+
 
 function createSimple(num) {
 
