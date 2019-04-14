@@ -27,7 +27,7 @@ const allowedPattern = {
 
   min: 2,
   max: 10,
-  onlyNumbers: true,
+  onlyNumbers: false,
   invalidChar: [
     '~',
     '`',
