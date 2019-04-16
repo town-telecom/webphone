@@ -128,6 +128,7 @@ function generateCall() {
           number2Call = Number(number2Call);
           number2Call = number2Call.toString();
           console.log("Generate Call!!!", number2Call);
+          createSimple(number2Call);
         } else {
           document.querySelector("#errorMessage").innerText = "Decimal symbol present on dialing string. Please check and try again...";
           modalToggle();
@@ -171,19 +172,28 @@ function sendSipMessage() {
 function createSimple(num) {
 
   console.log("Create Simple!");
+
+  var localVideoElement = document.getElementById('localVideo');
+  var remoteVideoElement = document.getElementById('remoteVideo');
+
   var simple = new SIP.Web.Simple(sipOptions);
 
-  simple.on('registered', function() {});
-  simple.on('unregistered', function() {});
-  simple.on('new', function() {});
-  simple.on('ringing', function() {});
-  simple.on('connecting', function() {});
-  simple.on('connected', function() {});
-  simple.on('ended', function() {});
-  simple.on('hold', function() {});
-  simple.on('unhold', function() {});
-  simple.on('mute', function() {});
-  simple.on('unmute', function() {});
+  simple.call('100@134.209.126.10');
+
+
+
+
+  // simple.on('registered', function() {});
+  // simple.on('unregistered', function() {});
+  // simple.on('new', function() {});
+  // simple.on('ringing', function() {});
+  // simple.on('connecting', function() {});
+  // simple.on('connected', function() {});
+  // simple.on('ended', function() {});
+  // simple.on('hold', function() {});
+  // simple.on('unhold', function() {});
+  // simple.on('mute', function() {});
+  // simple.on('unmute', function() {});
   // simple.on('dtmf', function(tone) {});
   // simple.on('message', function (message) {});
 
