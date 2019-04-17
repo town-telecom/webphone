@@ -171,7 +171,7 @@ function sendSipMessage() {
 
 function createSimple(num) {
 
-  console.log("Create Simple!");
+  console.log("Create Simple!", num);
 
   var localVideoElement = document.getElementById('localVideo');
   var remoteVideoElement = document.getElementById('remoteVideo');
