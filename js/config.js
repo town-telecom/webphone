@@ -1,5 +1,6 @@
 const audio_url = './sounds/';
 const extension = '.wav';
+const registrar = userAgent.uri.split("@");
 
 const sipOptions = {
 

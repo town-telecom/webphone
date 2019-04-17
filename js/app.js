@@ -178,7 +178,7 @@ function createSimple(num) {
 
   var simple = new SIP.Web.Simple(sipOptions);
 
-  simple.call(`${num}@${registrar}`);
+  simple.call(`${num}@${registrar[1]}`);
 
 
 
